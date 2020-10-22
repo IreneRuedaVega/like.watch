@@ -8,11 +8,15 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/main.css" />
+    <script
+      src="https://kit.fontawesome.com/0c04f9b7b8.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Buscador de series</title>
   </head>
   <body>
     <header class="header">
-      <h1 class="header__title">TVShows.list</h1>
+      <h1 class="header__title">TVShow.List</h1>
       <div class="header__container">
         <input
           class="header__container--input"
@@ -28,7 +32,15 @@
         />
       </div>
     </header>
-    <main></main>
+    <main>
+      <aside class="asideFavourites">
+        <h2 class="asideFavourites__title">Mis series favoritas</h2>
+        <button class="asideFavourites__button" type="reset">
+          Elimina tus series<i class="far fa-trash-alt icon"></i>
+        </button>
+      </aside>
+      <ul></ul>
+    </main>
     <footer class="footer">
       <small> Irene Rueda Vega &copy 2020</small>
     </footer>

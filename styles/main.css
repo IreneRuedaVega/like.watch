@@ -1,8 +1,12 @@
+/*Reset*/
+
 * {
   margin: 0;
   box-sizing: border-box;
   font-family: var(--primary-font);
 }
+
+/*Variables CSS*/
 
 :root {
   --primary-font: "Roboto", sans-serif;
@@ -11,7 +15,10 @@
   --color-light: #f6f7fe;
   --color-font: #ffffff;
   --color-footer: #000000;
+  --color-button: #424ba7;
 }
+
+/*Header*/
 
 .header {
   background-color: var(--color-light);
@@ -27,7 +34,7 @@
 
 .header__title {
   font-size: 30px;
-  margin-left: 50px;
+  margin-left: 250px;
   color: var(--color-dark);
 }
 
@@ -37,23 +44,60 @@
 
 .header__container--input {
   height: 32px;
-  width: 300px;
+  width: 290px;
   font-size: 18px;
   border: 2px solid var(--color-dark);
 }
 
 .header__container--button {
-  background-color: var(--color-medium);
+  background-color: var(--color-button);
   color: var(--color-light);
   height: 32px;
   border-radius: 5px;
   font-size: 15px;
-  border: 5px solid var(--color-medium);
+  border: 5px solid var(--color-button);
+  margin-left: 4px;
 }
 
+/*Aside - Section favourites*/
+
+.asideFavourites {
+  background-color: var(--color-dark);
+  position: fixed;
+  left: 0px;
+  z-index: 1;
+  width: 300px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.asideFavourites__title {
+  color: var(--color-light);
+  font-size: 18px;
+  line-height: 14px;
+  margin-top: 30px;
+  padding: 15px;
+}
+
+.asideFavourites__button {
+  color: var(--color-light);
+  background-color: var(--color-button);
+  padding: 5px;
+  border-radius: 6px;
+  border: 2px solid var(--color-button);
+}
+
+.icon {
+  margin-left: 10px;
+}
+
+/*Footer*/
+
 .footer {
-  width: 100%;
-  position: absolute;
+  width: 100vw;
+  position: fixed;
   bottom: 0;
   background-color: var(--color-footer);
   color: var(--color-light);

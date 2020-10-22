@@ -18,6 +18,10 @@
   --color-button: #424ba7;
 }
 
+.body {
+  background-color: var(--color-medium);
+}
+
 /*Header*/
 
 .header {
@@ -58,6 +62,8 @@
   border: 5px solid var(--color-button);
   margin-left: 4px;
 }
+
+/*Main*/
 
 /*Aside - Section favourites*/
 

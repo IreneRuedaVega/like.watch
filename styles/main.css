@@ -63,7 +63,7 @@
 
 .asideFavourites {
   background-color: var(--color-dark);
-  position: fixed;
+  position: absolute;
   left: 0px;
   z-index: 1;
   width: 300px;

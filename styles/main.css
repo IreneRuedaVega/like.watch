@@ -10,6 +10,7 @@
   --color-medium: #293473;
   --color-light: #f6f7fe;
   --color-font: #ffffff;
+  --color-footer: #000000;
 }
 
 .header {
@@ -46,4 +47,19 @@
   height: 32px;
   border-radius: 5px;
   font-size: 15px;
+}
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--color-footer);
+  color: var(--color-light);
+  height: 32.5px;
+  font-family: var(--primary-font);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
 }

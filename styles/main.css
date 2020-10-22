@@ -62,19 +62,20 @@
 /*Main*/
 
 .main {
+  width: 100%;
   background-color: var(--color-medium);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
+  min-height: 83vh;
 }
 
 .main__films {
+  width: 65%;
+  height: 60%;
+  position: absolute;
+  right: 0;
+  margin: 40px 60px 0 0;
   background-color: red;
-  width: 50px;
-  height: 50px;
 }
+
 /*Aside - Section favourites*/
 
 .main__aside {
@@ -90,7 +91,7 @@
   align-items: center;
 }
 
-.asideFavourites__title {
+.main__aside--title {
   color: var(--color-light);
   font-size: 18px;
   line-height: 14px;
@@ -98,7 +99,7 @@
   padding: 15px;
 }
 
-.asideFavourites__button {
+.main__aside--button {
   color: var(--color-light);
   background-color: var(--color-button);
   padding: 5px;

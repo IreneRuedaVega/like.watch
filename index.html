@@ -11,17 +11,21 @@
     <title>Buscador de series</title>
   </head>
   <body>
-    <header>
-      <h1>Series.list: tu buscador de series</h1>
-      <div>
-        <label for="search">
-          <input type="text" id="search" placeholder="Busca tu serie..." />
-        </label>
-        <input class="button" type="button" name="button" value="Busca" />
-        <img
-          src="./images/icon-search.png"
-          alt="Lupa para buscar series"
-          title="Lupa para buscar series"
+    <header class="header">
+      <h1 class="header__title">TVShows.list</h1>
+      <div class="header__container">
+        <input
+          class="header__container--input"
+          type="text"
+          id="search"
+          placeholder="Busca tu serie..."
+        />
+
+        <input
+          class="header__container--button"
+          type="button"
+          name="button"
+          value="Buscar"
         />
       </div>
     </header>

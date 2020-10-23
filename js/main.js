@@ -3,6 +3,7 @@
 const resultsShow = document.querySelector(".js-list");
 
 let series = [];
+let favouritesList = [];
 
 //Función para obtener los datos del API
 
@@ -37,6 +38,14 @@ function paintSeries() {
   }
   resultsShow.innerHTML = seriesResults;
 }
+
+//Función para las series favoritas
+
+const favouritesShows = function (ev) {
+  const clicked = parseInt(ev.currentTarget.id);
+};
+
+//Función para escuchar el evento de la búsqueda
 
 const buttonSearch = document.querySelector(".js-btnSearch");
 

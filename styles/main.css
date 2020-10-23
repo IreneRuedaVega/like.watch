@@ -24,8 +24,6 @@
   background-color: var(--color-light);
   width: 100%;
   height: 120px;
-  /* position: fixed;
-  top: 0; */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -93,7 +91,6 @@
   align-items: center;
   flex-wrap: wrap;
   list-style: none;
-  background-color: red;
 }
 
 .card {
@@ -103,8 +100,9 @@
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  background-color: white;
-  border: 4px solid var(--color-medium);
+  background-color: var(--color-dark);
+  border: 6px solid var(--color-button);
+  color: var(--color-light);
   overflow: hidden;
   transition: 0.25s all;
 }
@@ -117,39 +115,6 @@
 }
 
 .card__img {
-  width: 100%;
-}
-
-.cardsAside {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-  list-style: none;
-  background-color: red;
-}
-
-.cardAside {
-  margin: 20px 40px 50px 0;
-  height: 60px;
-  max-width: 80px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  background-color: white;
-  border: 2px solid var(--color-medium);
-  overflow: hidden;
-  transition: 0.25s all;
-}
-
-.cardAside__title {
-  display: block;
-  margin: 0;
-  padding: 0.3rem 1rem;
-  font-size: 1rem;
-}
-
-.cardAside__img {
   width: 100%;
 }
 
@@ -187,7 +152,6 @@
 /*Footer*/
 
 .footer {
-  width: 100vw;
   background-color: var(--color-footer);
   color: var(--color-light);
   height: 32.5px;

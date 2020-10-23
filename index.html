@@ -17,11 +17,16 @@
   <body class="body">
     <header class="header">
       <h1 class="header__title">like.watch</h1>
-      <div class="header__container">
+      <form class="header__container">
+        <label for="text"></label>
         <input
+          id="text"
+          type="text"
+          aria-label="input-search"
           class="header__container--input js-input"
           type="search"
           id="search"
+          value="game"
           placeholder="Busca tu serie..."
         />
         <input
@@ -30,7 +35,7 @@
           name="button"
           value="Buscar"
         />
-      </div>
+      </form>
     </header>
     <main class="main">
       <aside class="main__aside">
@@ -38,10 +43,10 @@
         <button class="main__aside--button" type="reset">
           Elimina tus series<i class="far fa-trash-alt icon"></i>
         </button>
-        <ul>
-          <li>
-            <h2></h2>
-            <img src="" alt="" />
+        <ul class="cards">
+          <li class="card">
+            <h2 class="card__title">Hola</h2>
+            <img class="card__img" src="" alt="" />
           </li>
         </ul>
       </aside>
@@ -49,8 +54,11 @@
         <div class="slogan">
           <h3>las series que buscas</h3>
         </div>
-        <ul>
-          <li>IRENE</li>
+        <ul class="cards">
+          <li class="card">
+            <h2 class="card__title">Hola</h2>
+            <img class="card__img" src="" alt="" />
+          </li>
         </ul>
       </section>
     </main>

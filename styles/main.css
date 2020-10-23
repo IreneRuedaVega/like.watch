@@ -87,6 +87,40 @@
   color: var(--color-medium);
 }
 
+.cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  background-color: red;
+}
+
+.card {
+  margin: 20px 40px 50px 0;
+  height: 60px;
+  max-width: 80px;
+  max-height: 80px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: white;
+  border: 2px solid var(--color-medium);
+  /* overflow: hidden; */
+  transition: 0.25s all;
+}
+
+.card__title {
+  display: block;
+  margin: 0;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+}
+
+.card__img {
+  width: 100%;
+}
+
 /*Aside - Section favourites*/
 
 .main__aside {
@@ -100,10 +134,11 @@
 
 .main__aside--title {
   color: var(--color-light);
-  font-size: 18px;
+  font-size: 15px;
   line-height: 14px;
-  margin-top: 30px;
+  margin-top: 10px;
   padding: 15px;
+  text-transform: uppercase;
 }
 
 .main__aside--button {
@@ -133,4 +168,5 @@
   align-items: center;
   justify-content: flex-end;
   padding: 20px;
+  text-transform: capitalize;
 }

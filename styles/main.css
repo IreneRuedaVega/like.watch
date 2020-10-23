@@ -70,7 +70,7 @@
 .main__films {
   width: 65%;
   margin: 40px 60px 0 0;
-  background-color: var(--color-light);
+  /* background-color: var(--color-light); */
 }
 
 /*Main - Section series*/
@@ -81,7 +81,7 @@
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  color: var(--color-medium);
+  color: var(--color-light);
   margin-top: 15px;
 }
 
@@ -102,13 +102,13 @@
   align-items: center;
   border-radius: 8px;
   background-color: var(--color-dark);
-  border: 6px solid var(--color-button);
+  border: 6px solid var(--color-light);
   color: var(--color-light);
   overflow: hidden;
   transition: 0.25s all;
 }
 
-.card__favourite {
+.card__favourite .cards {
   background-color: red;
   color: blue;
 }

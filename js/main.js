@@ -28,63 +28,46 @@ function getDataFromApi(ev) {
 
 function paintSeries() {
   let seriesResults = "";
-  let urlphoto = "https://via.placeholder.com/210x295/ffffff/666666/?text=TV";
+  let urlPhoto = "https://via.placeholder.com/210x295/ffffff/666666/?text=TV";
   for (let i = 0; i < series.length; i++) {
     let classFavourite;
     const favouriteIndex = favouritesList.indexOf(i);
     const favourite = favouriteIndex !== -1;
-    if (favourite === true) {
+    if (favourite === false) {
+      console.log("Maria");
       classFavourite = "card__favourite";
     } else {
+      console.log("Pepe");
       classFavourite = "";
     }
-
     seriesResults += `<li class="card ${classFavourite}" id="${series[i].show.id}">`;
     seriesResults += `<h2 class="card__title">${series[i].show.name}</h2>`;
     if (series[i].show.image === null) {
-      seriesResults += `<img class="card__img" src="${urlphoto}" alt="Foto de ${series[i].show.name}"/>`;
+      seriesResults += `<img class="card__img" src="${urlPhoto}" alt="Foto de ${series[i].show.name}"/>`;
     } else {
       seriesResults += `<img class="card__img" src="${series[i].show.image.medium}" alt="Foto de ${series[i].show.name}"/>`;
     }
     seriesResults += "<li>";
   }
-  console.log(seriesResults);
   resultsShow.innerHTML = seriesResults;
 }
 
 //Función para las series favoritas
 
-//const favouritesShows = function (event) {
-//console.log("Hola mundo");
-//const clicked = parseInt(event.currentTarget.id);
-//console.log(clicked);
-//const indexFav = favouritesList.indexOf(clicked); // find
-//const isFavourite = indexFav !== -1;
-//if (isFavourite === false) {
-//favouritesList.push(clicked); // guardar el objeto entero
-//} else {
-//favouritesList.splice(indexFav, 1);
-//}
-//console.log(favouritesList);
-//paintSeries();
-//listenSeries();
-//paintFavourites();
-//};
-
 const favouritesShows = function (event) {
-  console.log("Hola mundo");
   const clickedSerie = parseInt(event.currentTarget.id);
   let serieFav;
   let indexInFavourites;
   for (let i = 0; i < series.length; i++) {
-    console.log("entro");
     if (clickedSerie === series[i].show.id) {
+      //Buscamos en favoritos en el objeto cuyo id sea el mismo que el de la serie
       serieFav = favouritesList.find(
         (favouritesList) => favouritesList.show.id == series[i].id
       );
+      //Si lo encontramos (si no está undefined) está dentro de favoritos
       if (serieFav !== undefined) {
+        //Buscamos el índice de esa serie en favoritos y lo sacamos del array
         indexInFavourites = favouritesList.findIndex((fav) => serieFav === fav);
-        favouritesList.splice([indexInFavourites], 1);
       } else {
         favouritesList.push(series[i]);
       }
@@ -95,6 +78,8 @@ const favouritesShows = function (event) {
   listenSeries();
   paintFavourites();
 };
+
+//Función pintar en las series favoritas
 
 function paintFavourites() {
   let seriesFavouriteResults = "";
@@ -113,14 +98,16 @@ function paintFavourites() {
   resultsFavouritesShows.innerHTML = seriesFavouriteResults;
 }
 
+//Función para escuchar el evento para seleccionar las series
+
 function listenSeries() {
-  const seriesItems = document.querySelectorAll(".card");
+  const seriesItems = document.querySelectorAll(".card, .card__favourite");
   for (const serieItem of seriesItems) {
     serieItem.addEventListener("click", favouritesShows);
   }
 }
 
-//Función para escuchar el evento de la búsqueda
+//Función para escuchar el evento de la búsqueda de series
 
 const formSearch = document.querySelector(".js-formSearch");
 

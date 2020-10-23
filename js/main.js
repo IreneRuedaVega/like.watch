@@ -34,8 +34,8 @@ function paintSeries() {
     const favouriteIndex = favouritesList.indexOf(i);
     const favourite = favouriteIndex !== -1;
     if (favourite === false) {
-      console.log("Maria");
       classFavourite = "card__favourite";
+      console.log("Maria");
     } else {
       console.log("Pepe");
       classFavourite = "";
@@ -77,6 +77,7 @@ const favouritesShows = function (event) {
   paintSeries();
   listenSeries();
   paintFavourites();
+  setLocalStorage();
 };
 
 //Función pintar en las series favoritas
@@ -104,6 +105,21 @@ function listenSeries() {
   const seriesItems = document.querySelectorAll(".card, .card__favourite");
   for (const serieItem of seriesItems) {
     serieItem.addEventListener("click", favouritesShows);
+  }
+}
+
+//Función para guardar datos de favoritos en LocalStorage
+
+function setLocalStorage() {
+  localStorage.setItem("favourite", JSON.stringify(favouritesList));
+}
+
+//Función para obtener la info del localStorage, leerla y parsearla
+
+function getLocalStorage() {
+  favouritesList = JSON.parse(localStorage.getItem("favourite"));
+  if (favouritesList === null) {
+    favouritesList = [];
   }
 }
 

@@ -110,7 +110,7 @@
 
 .card__favourite .cards {
   background-color: red;
-  color: blue;
+  /* color: blue; */
 }
 
 .card__title {

@@ -82,6 +82,7 @@
   align-items: center;
   text-transform: uppercase;
   color: var(--color-medium);
+  margin-top: 15px;
 }
 
 .cards {
@@ -95,7 +96,7 @@
 
 .card {
   margin: 20px 40px 50px 0;
-  height: 185px;
+  max-height: 200px;
   max-width: 120px;
   justify-content: center;
   align-items: center;

@@ -107,6 +107,11 @@
   transition: 0.25s all;
 }
 
+.card__favourite {
+  background-color: red;
+  color: blue;
+}
+
 .card__title {
   display: block;
   margin: 0;

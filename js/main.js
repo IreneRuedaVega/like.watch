@@ -9,7 +9,7 @@ let series = [];
 function getDataFromApi() {
   const inputSearch = document.querySelector(".js-input");
   const inputValue = inputSearch.value;
-  fetch(`http://api.tvmaze.com/search/shows?q=${inputValue}`)
+  fetch(`//api.tvmaze.com/search/shows?q=${inputValue}`)
     .then(function (response) {
       return response.json();
     })

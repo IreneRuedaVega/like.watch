@@ -101,16 +101,14 @@
 
 .card {
   margin: 20px 40px 50px 0;
-  /* max-height: 200px;
-  max-width: 120px; */
-  height: 350px; /*Por probar*/
+  height: 350px;
   width: 250px;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
   background-color: var(--color-dark);
-  border: 6px solid var(--color-light);
   color: var(--color-light);
+  border: 3px solid var(--color-border);
   overflow: hidden;
   transition: 0.25s all;
   display: flex;
@@ -120,7 +118,8 @@
 }
 
 .card__favourite {
-  background-color: red;
+  background-color: var(--color-border);
+  color: var(--color-dark);
 }
 
 .card__title {
@@ -130,7 +129,6 @@
 }
 
 .card__img {
-  /*  width: 100%; */
   width: 80%;
 }
 

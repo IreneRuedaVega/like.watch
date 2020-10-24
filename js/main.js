@@ -31,10 +31,8 @@ function paintSeries() {
   let urlPhoto = "https://via.placeholder.com/210x295/ffffff/666666/?text=TV";
   for (let i = 0; i < series.length; i++) {
     let classFavourite;
-    const favouriteIndex = favouritesList.indexOf(i);
-    const favourite = favouriteIndex !== -1;
-    if (favourite === false) {
-      console.log("Irene");
+    const favouriteIndex = favouritesList.indexOf(series[i]);
+    if (favouriteIndex === -1) {
       classFavourite = "";
     } else {
       classFavourite = "card__favourite";
@@ -97,6 +95,7 @@ function paintFavourites() {
     seriesFavouriteResults += "<li>";
   }
   resultsFavouritesShows.innerHTML = seriesFavouriteResults;
+  /* listenReset(); */
 }
 
 //Función para escuchar el evento para seleccionar las series
@@ -122,6 +121,19 @@ function getLocalStorage() {
     favouritesList = [];
   }
 }
+
+/* const buttonReset = document.querySelector(".js-button-reset");
+
+function listenReset() {
+  console.log("Irene");
+  buttonReset.addEventListener("click", paintFavourites);
+}
+
+function resetAll(){
+
+}
+
+listenReset(); */
 
 //Función para escuchar el evento de la búsqueda de series
 

@@ -70,7 +70,6 @@
 .main__films {
   width: 65%;
   margin: 40px 60px 0 0;
-  /* background-color: var(--color-light); */
 }
 
 /*Main - Section series*/
@@ -96,8 +95,10 @@
 
 .card {
   margin: 20px 40px 50px 0;
-  max-height: 200px;
-  max-width: 120px;
+  /* max-height: 200px;
+  max-width: 120px; */
+  height: 350px; /*Por probar*/
+  width: 250px;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
@@ -106,22 +107,25 @@
   color: var(--color-light);
   overflow: hidden;
   transition: 0.25s all;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.card__favourite .cards {
+.wrapper {
   background-color: red;
-  /* color: blue; */
 }
 
 .card__title {
   display: block;
-  margin: 0;
-  padding: 0.3rem 1rem;
-  font-size: 1rem;
+  padding: 10px;
+  font-size: 16px;
 }
 
 .card__img {
-  width: 100%;
+  /*  width: 100%; */
+  width: 80%;
 }
 
 /*Aside - Section favourites*/

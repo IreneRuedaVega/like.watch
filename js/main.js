@@ -6,7 +6,7 @@ const resultsFavouritesShows = document.querySelector(".js-list-favourites");
 let series = [];
 let favouritesList = [];
 
-//Función para obtener los datos del API
+//Función para conectar con la API y recoger los datos que necesitamos
 
 function getDataFromApi(ev) {
   ev.preventDefault();
@@ -24,7 +24,7 @@ function getDataFromApi(ev) {
     });
 }
 
-//Función para pintar
+//Función para pintar los resultados de la búsqueda
 
 function paintSeries() {
   let seriesResults = "";
@@ -33,12 +33,11 @@ function paintSeries() {
     let classFavourite;
     const favouriteIndex = favouritesList.indexOf(i);
     const favourite = favouriteIndex !== -1;
-    if (favourite === false) {
-      classFavourite = "card__favourite";
-      console.log("Maria");
-    } else {
-      console.log("Pepe");
+    if (favourite === true) {
+      console.log("Irene");
       classFavourite = "";
+    } else {
+      classFavourite = "wrapper";
     }
     seriesResults += `<li class="card ${classFavourite}" id="${series[i].show.id}">`;
     seriesResults += `<h2 class="card__title">${series[i].show.name}</h2>`;
@@ -52,7 +51,7 @@ function paintSeries() {
   resultsShow.innerHTML = seriesResults;
 }
 
-//Función para las series favoritas
+//Función para guardar las series favoritas
 
 const favouritesShows = function (event) {
   const clickedSerie = parseInt(event.currentTarget.id);
@@ -80,7 +79,7 @@ const favouritesShows = function (event) {
   setLocalStorage();
 };
 
-//Función pintar en las series favoritas
+//Función para pintar las series favoritas
 
 function paintFavourites() {
   let seriesFavouriteResults = "";
@@ -88,11 +87,12 @@ function paintFavourites() {
     "https://via.placeholder.com/210x295/ffffff/666666/?text=TV";
   for (let i = 0; i < favouritesList.length; i++) {
     seriesFavouriteResults += `<li class="card" id="${favouritesList[i].show.id}">`;
+    seriesFavouriteResults += `<button type="reset"><i class="fas fa-times"></i></button>`;
     seriesFavouriteResults += `<h2 class="card__title">${favouritesList[i].show.name}</h2>`;
     if (favouritesList[i].show.image === null) {
       seriesFavouriteResults += `<img class="card__img" src="${urlPhotoFavourites}" alt="Foto de ${favouritesList[i].show.name}"/>`;
     } else {
-      seriesFavouriteResults += `<img class="card__img" src="${favouritesList[i].show.image.medium}" alt="Foto de ${favouritesList[i].show.name}"/>/>`;
+      seriesFavouriteResults += `<img class="card__img" src="${favouritesList[i].show.image.medium}" alt="Foto de ${favouritesList[i].show.name}"/>`;
     }
     seriesFavouriteResults += "<li>";
   }
@@ -102,13 +102,13 @@ function paintFavourites() {
 //Función para escuchar el evento para seleccionar las series
 
 function listenSeries() {
-  const seriesItems = document.querySelectorAll(".card, .card__favourite");
+  const seriesItems = document.querySelectorAll(".card");
   for (const serieItem of seriesItems) {
     serieItem.addEventListener("click", favouritesShows);
   }
 }
 
-//Función para guardar datos de favoritos en LocalStorage
+//Función para guardar los datos de favoritos en LocalStorage
 
 function setLocalStorage() {
   localStorage.setItem("favourite", JSON.stringify(favouritesList));

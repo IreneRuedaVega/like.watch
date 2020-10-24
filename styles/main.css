@@ -16,6 +16,7 @@
   --color-font: #ffffff;
   --color-footer: #000000;
   --color-button: #424ba7;
+  --color-border: #b0b4d9;
 }
 
 /*Header*/
@@ -44,17 +45,22 @@
   height: 32px;
   width: 290px;
   font-size: 18px;
-  border: 2px solid var(--color-dark);
+  border: 2px solid var(--color-border);
 }
 
 .header__container--button {
-  background-color: var(--color-button);
+  background-color: var(--color-border);
   color: var(--color-light);
   height: 32px;
   border-radius: 5px;
   font-size: 15px;
-  border: 5px solid var(--color-button);
+  border: none;
   margin-left: 4px;
+  transition: all 0.5s ease;
+}
+
+.header__container--button:hover {
+  background-color: var(--color-button);
 }
 
 /*Main*/
@@ -113,7 +119,7 @@
   justify-content: center;
 }
 
-.wrapper {
+.card__favourite {
   background-color: red;
 }
 

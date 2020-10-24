@@ -33,11 +33,11 @@ function paintSeries() {
     let classFavourite;
     const favouriteIndex = favouritesList.indexOf(i);
     const favourite = favouriteIndex !== -1;
-    if (favourite === true) {
+    if (favourite === false) {
       console.log("Irene");
       classFavourite = "";
     } else {
-      classFavourite = "wrapper";
+      classFavourite = "card__favourite";
     }
     seriesResults += `<li class="card ${classFavourite}" id="${series[i].show.id}">`;
     seriesResults += `<h2 class="card__title">${series[i].show.name}</h2>`;

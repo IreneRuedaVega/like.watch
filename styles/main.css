@@ -35,6 +35,8 @@
   font-size: 30px;
   margin-left: 50px;
   color: var(--color-dark);
+  border-radius: 6px;
+  padding: 10px;
 }
 
 .header__container {
@@ -73,12 +75,12 @@
   min-height: 100vh;
 }
 
+/*Main - Section series*/
+
 .main__films {
   width: 65%;
   margin: 40px 60px 0 0;
 }
-
-/*Main - Section series*/
 
 .slogan {
   display: flex;
@@ -101,7 +103,7 @@
 
 .card {
   margin: 20px 40px 50px 0;
-  height: 350px;
+  height: 380px;
   width: 250px;
   justify-content: center;
   align-items: center;
@@ -109,7 +111,6 @@
   background-color: var(--color-dark);
   color: var(--color-light);
   border: 3px solid var(--color-border);
-  overflow: hidden;
   transition: 0.25s all;
   display: flex;
   flex-direction: column;

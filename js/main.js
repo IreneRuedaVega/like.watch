@@ -74,7 +74,7 @@ const favouritesShows = function (event) {
   paintSeries();
   listenSeries();
   paintFavourites();
-  setLocalStorage();
+  setInLocalStorage();
 };
 
 //Función para pintar las series favoritas
@@ -107,20 +107,22 @@ function listenSeries() {
   }
 }
 
-//Función para guardar los datos de favoritos en LocalStorage
+// Local Storage
 
-function setLocalStorage() {
-  localStorage.setItem("favourite", JSON.stringify(favouritesList));
+function setInLocalStorage() {
+  const stringifyFavourites = JSON.stringify(favouritesList);
+  localStorage.setItem("favourites", stringifyFavourites);
 }
 
-//Función para obtener la info del localStorage, leerla y parsearla
-
-function getLocalStorage() {
-  favouritesList = JSON.parse(localStorage.getItem("favourite"));
-  if (favouritesList === null) {
-    favouritesList = [];
+function getFromLocalStorage() {
+  const localStorageData = localStorage.getItem("favourites");
+  if (localStorageData !== null) {
+    favouritesList = JSON.parse(localStorageData);
+    paintFavourites();
   }
 }
+
+getFromLocalStorage();
 
 /* const buttonReset = document.querySelector(".js-button-reset");
 

@@ -6,19 +6,19 @@ Este es el ejercicio que se pide en la evaluación final del Módulo 2 de JavaSc
 
 El ejercicio tiene distintos hitos:
 
-1. Estructura básica
+1. **Estructura básica**
 
 Realizar una estructura básica.
 La aplicación de búsqueda de series consta de dos partes:
 a. Un campo de texto y un botón para buscar series por su título.
 b. Un listado de resultados de búsqueda donde aparece el cartel de la serie y el título.
 
-2. Búsqueda
+2. **Búsqueda**
 
 Al hacer clic sobre el botón de Buscar, la aplicación debe conectarse al API abierto de TVMaze para búsqueda de series.
 Por cada show contenido en el resultado de la búsqueda hay que pintar una tarjeta donde mostramos una imagen de la serie y el título.
 
-3. Favoritos
+3. **Favoritos**
 
 Una vez aparecen los resultados de búsqueda, la usuaria puede indicar cuáles son nuestras series favoritas.
 Para ello, al hacer clic sobre una serie debe pasar lo siguiente:
@@ -29,11 +29,11 @@ Para ello, al hacer clic sobre una serie debe pasar lo siguiente:
   las series favoritas.
 - Las series favoritas deben seguir apareciendo a la izquierda aunque la usuaria realice otra búsqueda.
 
-4. Almacenamiento local
+4. **Almacenamiento local**
 
 Hay que almacenar el listado de favoritos en el localStorage. De esta forma, al recargar la página el listado de favoritos se debe mostrarse.
 
-A modo de bonus extra se pide afinar la maquetación y la opción de borrar el listado de favoritos (todos y de forma indidivual).
+A modo de bonus extra se pide afinar la maquetación y la opción de borrar el listado de favoritos (todas las series o de forma individual las series que están en series favoritas).
 
 ## Cómo navegar por el proyecto
 

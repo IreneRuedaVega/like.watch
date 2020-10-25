@@ -3,13 +3,13 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: var(--primary-font);
+  font-family: var(--font-family);
 }
 
 /*Variables CSS*/
 
 :root {
-  --primary-font: "Roboto", sans-serif;
+  --font-family: "Roboto", sans-serif;
   --color-primary: #202956;
   --color-secondary: #f6f7fe;
   --color-tertiary: #293473;

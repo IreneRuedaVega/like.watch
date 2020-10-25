@@ -1,12 +1,16 @@
 "use strict";
 
+//Constantes
+
 const resultsShow = document.querySelector(".js-list");
 const resultsFavouritesShows = document.querySelector(".js-list-favourites");
+
+//Arrays
 
 let series = [];
 let favouritesList = [];
 
-//Función para conectar con la API y recoger los datos que necesitamos
+//Función para obtener los datos de la API
 
 function getDataFromApi(ev) {
   ev.preventDefault();
@@ -23,7 +27,7 @@ function getDataFromApi(ev) {
     });
 }
 
-//Función para pintar los resultados de la búsqueda
+//Función para pintar los resultados de la búsqueda de series
 
 function paintSeries() {
   let seriesResults = "";
@@ -46,6 +50,14 @@ function paintSeries() {
     seriesResults += "<li>";
   }
   resultsShow.innerHTML = seriesResults;
+}
+
+//Función para escuchar el evento de la búsqueda de series
+
+const formSearch = document.querySelector(".js-form-search");
+
+function listenButton() {
+  formSearch.addEventListener("submit", getDataFromApi);
 }
 
 //Función para guardar las series favoritas
@@ -76,7 +88,7 @@ const favouritesShows = function (event) {
   setInLocalStorage();
 };
 
-//Función para pintar las series favoritas
+//Función que pinta las series favoritas en el apartado de series favoritas
 
 function paintFavourites() {
   let seriesFavouriteResults = "";
@@ -138,26 +150,6 @@ function listenReset() {
 
 listenReset();
 
-//Función para eliminar una a una las series favoritas
-
-/* const btnFavourite = document.querySelector(".js-button-fav");
-
-function resetEachSerie() {
-  console.log("Hola");
-}
-
-function listenFavReset() {
-  btnFavourite.addEventListener("click", resetEachSerie);
-}
-
-listenFavReset(); */
-
-//Función para escuchar el evento de la búsqueda de series
-
-const formSearch = document.querySelector(".js-form-search");
-
-function listenButton() {
-  formSearch.addEventListener("submit", getDataFromApi);
-}
+//start app
 
 listenButton();

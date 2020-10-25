@@ -124,18 +124,20 @@ function getFromLocalStorage() {
 
 getFromLocalStorage();
 
-/* const buttonReset = document.querySelector(".js-button-reset");
+//Función para borrar los elementos de la lista de favoritos
+
+function resetAll() {
+  favouritesList.splice(favouritesList);
+  paintFavourites();
+}
+
+const buttonReset = document.querySelector(".js-button-reset");
 
 function listenReset() {
-  console.log("Irene");
-  buttonReset.addEventListener("click", paintFavourites);
+  buttonReset.addEventListener("click", resetAll);
 }
 
-function resetAll(){
-
-}
-
-listenReset(); */
+listenReset();
 
 //Función para escuchar el evento de la búsqueda de series
 

@@ -77,8 +77,7 @@
 /*Main - Section series*/
 
 .main__films {
-  width: 65%;
-  margin: 40px 60px 0 0;
+  width: 100%;
 }
 
 .slogan {
@@ -89,6 +88,7 @@
   text-transform: uppercase;
   color: var(--color-light);
   margin-top: 15px;
+  width: 100%;
 }
 
 .cards {
@@ -123,7 +123,7 @@
 }
 
 .card__title {
-  display: block;
+  display: inline-block;
   padding: 10px;
   font-size: 16px;
 }

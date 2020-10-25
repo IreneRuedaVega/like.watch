@@ -19,7 +19,6 @@ function getDataFromApi(ev) {
     .then(function (data) {
       series = data;
       paintSeries();
-      listenButton();
       listenSeries();
     });
 }
@@ -85,7 +84,7 @@ function paintFavourites() {
     "https://via.placeholder.com/210x295/ffffff/666666/?text=TV";
   for (let i = 0; i < favouritesList.length; i++) {
     seriesFavouriteResults += `<li class="card" id="${favouritesList[i].show.id}">`;
-    seriesFavouriteResults += `<button type="reset"><i class="fas fa-times"></i></button>`;
+    seriesFavouriteResults += `<button class="js-button-fav" type="reset"><i class="fas fa-times"></i></button>`;
     seriesFavouriteResults += `<h2 class="card__title">${favouritesList[i].show.name}</h2>`;
     if (favouritesList[i].show.image === null) {
       seriesFavouriteResults += `<img class="card__img" src="${urlPhotoFavourites}" alt="Foto de ${favouritesList[i].show.name}"/>`;
@@ -95,7 +94,6 @@ function paintFavourites() {
     seriesFavouriteResults += "<li>";
   }
   resultsFavouritesShows.innerHTML = seriesFavouriteResults;
-  /* listenReset(); */
 }
 
 //Función para escuchar el evento para seleccionar las series
@@ -129,6 +127,7 @@ getFromLocalStorage();
 function resetAll() {
   favouritesList.splice(favouritesList);
   paintFavourites();
+  window.localStorage.clear();
 }
 
 const buttonReset = document.querySelector(".js-button-reset");
@@ -139,9 +138,23 @@ function listenReset() {
 
 listenReset();
 
+//Función para eliminar una a una las series favoritas
+
+/* const btnFavourite = document.querySelector(".js-button-fav");
+
+function resetEachSerie() {
+  console.log("Hola");
+}
+
+function listenFavReset() {
+  btnFavourite.addEventListener("click", resetEachSerie);
+}
+
+listenFavReset(); */
+
 //Función para escuchar el evento de la búsqueda de series
 
-const formSearch = document.querySelector(".js-formSearch");
+const formSearch = document.querySelector(".js-form-search");
 
 function listenButton() {
   formSearch.addEventListener("submit", getDataFromApi);

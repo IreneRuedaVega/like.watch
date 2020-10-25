@@ -1,4 +1,10 @@
-# Módulo-2-Evaluación-final-Irene-Rueda-Vega
+![Adalab](https://beta.adalab.es/resources/images/adalab-logo-155x61-bg-white.png)
+
+# Módulo-2-Evaluación-final
+
+Alumna: Irene Rueda Vega
+
+Promoción Kizzy
 
 ## Buscador de series favoritas
 

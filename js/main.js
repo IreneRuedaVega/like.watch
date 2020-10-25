@@ -47,7 +47,7 @@ function paintSeries() {
     } else {
       seriesResults += `<img class="card__img" src="${series[i].show.image.medium}" alt="Foto de ${series[i].show.name}"/>`;
     }
-    seriesResults += "<li>";
+    seriesResults += "</li>";
   }
   resultsShow.innerHTML = seriesResults;
 }
@@ -103,7 +103,7 @@ function paintFavourites() {
     } else {
       seriesFavouriteResults += `<img class="card__img" src="${favouritesList[i].show.image.medium}" alt="Foto de ${favouritesList[i].show.name}"/>`;
     }
-    seriesFavouriteResults += "<li>";
+    seriesFavouriteResults += "</li>";
   }
   resultsFavouritesShows.innerHTML = seriesFavouriteResults;
 }

@@ -4,6 +4,8 @@
 
 const resultsShow = document.querySelector(".js-list");
 const resultsFavouritesShows = document.querySelector(".js-list-favourites");
+const buttonReset = document.querySelector(".js-button-reset");
+const formSearch = document.querySelector(".js-form-search");
 
 //Arrays
 
@@ -54,8 +56,6 @@ function paintSeries() {
 
 //Function to listen the series search event
 
-const formSearch = document.querySelector(".js-form-search");
-
 function listenButton() {
   formSearch.addEventListener("submit", getDataFromApi);
 }
@@ -78,6 +78,7 @@ const favouritesShows = function (event) {
         indexInFavourites = favouritesList.findIndex((fav) => serieFav === fav);
       } else {
         favouritesList.push(series[i]);
+        //series.splice(indexInFavourites, 1);
       }
     }
   }
@@ -132,26 +133,26 @@ function getFromLocalStorage() {
   }
 }
 
-getFromLocalStorage();
-
 //Function to delete the elements from the favourite list
 
 function resetAll() {
-  favouritesList.splice(favouritesList);
+  favouritesList = [];
   paintFavourites();
   paintSeries();
   listenSeries();
   window.localStorage.clear();
 }
 
-const buttonReset = document.querySelector(".js-button-reset");
-
 function listenReset() {
   buttonReset.addEventListener("click", resetAll);
 }
 
-listenReset();
-
 //start app
 
-listenButton();
+function init() {
+  listenButton();
+  listenReset();
+  getFromLocalStorage();
+}
+
+init();

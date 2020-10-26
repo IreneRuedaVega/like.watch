@@ -70,12 +70,13 @@ const favouritesShows = function (event) {
     if (clickedSerie === series[i].show.id) {
       //We search in favourites in the object whose id is the same as that of the series
       serieFav = favouritesList.find(
-        (favouritesList) => favouritesList.show.id == series[i].id
+        (favouritesList) => favouritesList.show.id == series[i].show.id
       );
       //If we found it (if it is not undefined) it is inside of favourites
       if (serieFav !== undefined) {
         //We search in the index of that series in favourites and take it out of the array
         indexInFavourites = favouritesList.findIndex((fav) => serieFav === fav);
+        favouritesList.splice([indexInFavourites], 1);
       } else {
         favouritesList.push(series[i]);
         /*  series.splice(indexInFavourites, 1); */

@@ -76,7 +76,7 @@ const favouritesShows = function (event) {
       if (serieFav !== undefined) {
         //We search in the index of that series in favourites and take it out of the array
         indexInFavourites = favouritesList.findIndex((fav) => serieFav === fav);
-        favouritesList.splice([indexInFavourites], 1);
+        favouritesList.splice(indexInFavourites, 1);
         //if we can't find it, it's not in favourites
       } else {
         favouritesList.push(series[i]);

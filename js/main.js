@@ -80,7 +80,6 @@ const favouritesShows = function (event) {
         //if we can't find it, it's not in favourites
       } else {
         favouritesList.push(series[i]);
-        /*  series.splice(indexInFavourites, 1); */
       }
     }
   }

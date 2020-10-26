@@ -1,6 +1,6 @@
 "use strict";
 
-//Constantes
+//Variables
 
 const resultsShow = document.querySelector(".js-list");
 const resultsFavouritesShows = document.querySelector(".js-list-favourites");
@@ -10,7 +10,7 @@ const resultsFavouritesShows = document.querySelector(".js-list-favourites");
 let series = [];
 let favouritesList = [];
 
-//Función para obtener los datos de la API
+//Function to obtain the data from the API
 
 function getDataFromApi(ev) {
   ev.preventDefault();
@@ -27,7 +27,7 @@ function getDataFromApi(ev) {
     });
 }
 
-//Función para pintar los resultados de la búsqueda de series
+//Function to paint the results from the series search
 
 function paintSeries() {
   let seriesResults = "";
@@ -52,7 +52,7 @@ function paintSeries() {
   resultsShow.innerHTML = seriesResults;
 }
 
-//Función para escuchar el evento de la búsqueda de series
+//Function to listen the series search event
 
 const formSearch = document.querySelector(".js-form-search");
 
@@ -60,7 +60,7 @@ function listenButton() {
   formSearch.addEventListener("submit", getDataFromApi);
 }
 
-//Función para guardar las series favoritas
+//Function to save the favourite series
 
 const favouritesShows = function (event) {
   const clickedSerie = parseInt(event.currentTarget.id);
@@ -68,14 +68,15 @@ const favouritesShows = function (event) {
   let indexInFavourites;
   for (let i = 0; i < series.length; i++) {
     if (clickedSerie === series[i].show.id) {
-      //Buscamos en favoritos en el objeto cuyo id sea el mismo que el de la serie
+      //We search in favourites in the object whose id is the same as that of the series
       serieFav = favouritesList.find(
         (favouritesList) => favouritesList.show.id == series[i].id
       );
-      //Si lo encontramos (si no está undefined) está dentro de favoritos
+      //If we found it (if it is not undefined) it is inside of favourites
       if (serieFav !== undefined) {
-        //Buscamos el índice de esa serie en favoritos y lo sacamos del array
+        //We search in the index of that series in favourites and take it out of the array
         indexInFavourites = favouritesList.findIndex((fav) => serieFav === fav);
+        //favouritesList.splice(indexInFavourites, 1);
       } else {
         favouritesList.push(series[i]);
       }
@@ -88,7 +89,7 @@ const favouritesShows = function (event) {
   setInLocalStorage();
 };
 
-//Función que pinta las series favoritas en el apartado de series favoritas
+//Function that paint the favourite series in the favourite series section
 
 function paintFavourites() {
   let seriesFavouriteResults = "";
@@ -108,7 +109,7 @@ function paintFavourites() {
   resultsFavouritesShows.innerHTML = seriesFavouriteResults;
 }
 
-//Función para escuchar el evento para seleccionar las series
+//Function to listen the event to select the series
 
 function listenSeries() {
   const seriesItems = document.querySelectorAll(".card");
@@ -134,10 +135,11 @@ function getFromLocalStorage() {
 
 getFromLocalStorage();
 
-//Función para borrar los elementos de la lista de favoritos
+//Function to delete the elements from the favourite list
 
 function resetAll() {
   favouritesList.splice(favouritesList);
+  /*  paintSeries(); */
   paintFavourites();
   window.localStorage.clear();
 }

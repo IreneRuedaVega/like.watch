@@ -72,9 +72,13 @@ const favouritesShows = function (event) {
       serieFav = favouritesList.find(
         (favouritesList) => favouritesList.show.id == series[i].id
       );
-      if (serieFav === undefined) {
+      //If we found it (if it is not undefined) it is inside of favourites
+      if (serieFav !== undefined) {
+        //We search in the index of that series in favourites and take it out of the array
+        indexInFavourites = favouritesList.findIndex((fav) => serieFav === fav);
+      } else {
         favouritesList.push(series[i]);
-        //series.splice(indexInFavourites, 1);
+        /*  series.splice(indexInFavourites, 1); */
       }
     }
   }

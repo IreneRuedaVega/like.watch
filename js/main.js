@@ -119,7 +119,7 @@ function listenSeries() {
   }
 }
 
-// Local Storage
+// LocalStorage
 
 function setInLocalStorage() {
   const stringifyFavourites = JSON.stringify(favouritesList);

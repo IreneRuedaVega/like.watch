@@ -76,7 +76,6 @@ const favouritesShows = function (event) {
       if (serieFav !== undefined) {
         //We search in the index of that series in favourites and take it out of the array
         indexInFavourites = favouritesList.findIndex((fav) => serieFav === fav);
-        //favouritesList.splice(indexInFavourites, 1);
       } else {
         favouritesList.push(series[i]);
       }
@@ -139,8 +138,9 @@ getFromLocalStorage();
 
 function resetAll() {
   favouritesList.splice(favouritesList);
-  /*  paintSeries(); */
   paintFavourites();
+  paintSeries();
+  listenSeries();
   window.localStorage.clear();
 }
 

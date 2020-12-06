@@ -34,8 +34,8 @@ function getDataFromApi(ev) {
 
 //
 const changeSectionStyle = () => {
-  slogan.classList.toggle("slogan2");
-  sectionFav.classList.toggle("section_fav");
+  slogan.classList.add("slogan2");
+  sectionFav.classList.add("section_fav");
 };
 
 //Function to paint the results from the series search

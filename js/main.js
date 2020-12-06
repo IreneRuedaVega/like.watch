@@ -84,9 +84,10 @@ const favouritesShows = function (event) {
     }
   }
 
-  paintSeries();
-  listenSeries();
   paintFavourites();
+  paintSeries();
+  listenRemoveBtn();
+  listenSeries();
   setInLocalStorage();
 };
 
@@ -131,6 +132,8 @@ function getFromLocalStorage() {
   if (localStorageData !== null) {
     favouritesList = JSON.parse(localStorageData);
     paintFavourites();
+    listenRemoveBtn();
+    listenSeries();
   }
 }
 
@@ -141,11 +144,36 @@ function resetAll() {
   paintFavourites();
   paintSeries();
   listenSeries();
+  listenRemoveBtn();
   window.localStorage.clear();
 }
 
 function listenReset() {
   buttonReset.addEventListener("click", resetAll);
+}
+
+//
+
+function removeEachFavouriteShow(ev) {
+  for (let i = 0; i < favouritesList.length; i++) {
+    const removeBtnid = parseInt(ev.target.id);
+    const idFavShow = parseInt(favouritesList[i].id);
+    if (removeBtnid === idFavShow) {
+      favouritesList.splice([i], 1);
+    }
+  }
+  paintFavourites();
+  listenRemoveBtn();
+  paintSeries();
+  listenSeries();
+  setInLocalStorage();
+}
+
+function listenRemoveBtn() {
+  const removeBtnsFavourites = document.querySelectorAll(".js-button-fav");
+  for (const removeBtn of removeBtnsFavourites) {
+    removeBtn.addEventListener("click", removeEachFavouriteShow);
+  }
 }
 
 //start app

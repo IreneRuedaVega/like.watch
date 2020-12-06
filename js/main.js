@@ -26,6 +26,7 @@ function getDataFromApi(ev) {
       series = data;
       paintSeries();
       listenSeries();
+      getNumberResults();
     });
 }
 
@@ -44,6 +45,7 @@ function paintSeries() {
     }
     seriesResults += `<li class="card ${classFavourite}" id="${series[i].show.id}">`;
     seriesResults += `<h2 class="card__title">${series[i].show.name}</h2>`;
+    /*  seriesResults += `<h2>${series[i].show.premiered}</h2>`; */
     if (series[i].show.image === null) {
       seriesResults += `<img class="card__img" src="${urlPhoto}" alt="Foto de ${series[i].show.name}"/>`;
     } else {
@@ -89,6 +91,19 @@ const favouritesShows = function (event) {
   paintFavourites();
   setInLocalStorage();
 };
+
+/* const text = document.querySelector(".js-text");
+const list = [2, 5, 9];
+function getNumberResults() {
+  text.innerHTML = series.length;
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] <= series.length) {
+      console.log("Es menor que el número de series");
+    } else if (list[i] >= series.length) {
+      console.log("Es mayor que el número de series");
+    }
+  }
+} */
 
 //Function that paint the favourite series in the favourite series section
 

@@ -7,6 +7,8 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css" />
     <script
       src="https://kit.fontawesome.com/0c04f9b7b8.js"
@@ -36,7 +38,7 @@
       </form>
     </header>
     <main class="main">
-      <section class="main__favourite">
+      <section class="main__favourite js-sectionfav">
         <h2 class="main__favourite--title">mis series favoritas</h2>
         <button class="main__favourite--button js-button-reset" type="reset">
           Elimina tus series<i class="far fa-trash-alt icon"></i>
@@ -44,8 +46,9 @@
         <ul class="cards js-list-favourites"></ul>
       </section>
       <section class="main__shows">
-        <div class="slogan">
-          <h3>las series que buscas están aquí</h3>
+        <div class="slogan js-slogan">
+          <h3>Las series </br>que buscas</h3>
+          <p class="slogan-paragraph">Piensa en una serie y prueba a buscarla</p>
         </div>
         <ul class="cards js-list"></ul>
       </section>

@@ -75,6 +75,9 @@
   display: flex;
   justify-content: space-between;
   min-height: 100vh;
+  background-image: url("../images/bg@2x.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /*Main - Section series*/
@@ -88,10 +91,22 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
+  font-size: 110px;
+  text-align: center;
   color: var(--color-secondary);
-  margin-top: 15px;
+  margin-top: 250px;
+  font-family: "Roboto", sans-serif;
   width: 100%;
+}
+
+.slogan-paragraph {
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  margin-top: 15px;
+}
+
+.slogan2 {
+  display: none;
 }
 
 .cards {
@@ -138,8 +153,12 @@
 /*Aside - Section favourites*/
 
 .main__favourite {
+  display: none;
+}
+
+.section_fav {
   background-color: var(--color-primary);
-  width: 300px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;

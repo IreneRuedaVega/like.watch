@@ -6,6 +6,8 @@ const resultsShow = document.querySelector(".js-list");
 const resultsFavouritesShows = document.querySelector(".js-list-favourites");
 const buttonReset = document.querySelector(".js-button-reset");
 const formSearch = document.querySelector(".js-form-search");
+const slogan = document.querySelector(".js-slogan");
+const sectionFav = document.querySelector(".js-sectionfav");
 
 //Arrays
 
@@ -26,8 +28,15 @@ function getDataFromApi(ev) {
       series = data;
       paintSeries();
       listenSeries();
+      changeSectionStyle();
     });
 }
+
+//
+const changeSectionStyle = () => {
+  slogan.classList.toggle("slogan2");
+  sectionFav.classList.toggle("section_fav");
+};
 
 //Function to paint the results from the series search
 
